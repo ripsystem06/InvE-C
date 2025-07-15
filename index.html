@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitación Erik & Claudia</title>
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Birthstone+Bounce:wght@400;500&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+<audio id="musica-fondo" autoplay loop>
+  <source src="music/videoplayback.mp4" type="audio/mpeg" />
+</audio>
+<div id="player-container"></div>
+  <main class="container">
+    <!-- SECCIÓN 1 -->
+    <section class="seccion fade-section" id="seccion1">
+      <div class="flores-top-container">
+        <img src="img/flores-back.png" alt="Flores Decorativas" class="flores-top">
+      </div>
+
+      <div class="contenido">
+        <p class="frase">“Conocerte pudo ser cuestión de suerte o una<br>
+          simple coincidencia, pero prefiero interpretarlo<br>
+          como un regalo de la vida”</p>
+
+        <p class="subtitulo">Estás invitado</p>
+        <p class="titulo-mayus">A LA BODA DE:</p>
+        <h1 class="nombre">Erik & Claudia</h1>
+
+        <div class="fecha-hora">
+          <div>
+            <div class="numero">15-08-2025</div>
+            <div class="etiqueta">Nuestra fecha importante</div>
+          </div>
+        </div>
+
+        <div class="cuenta-regresiva" id="cuenta"></div>
+      </div>
+
+      <div class="divisor">
+        <img src="img/divisor.png" alt="Divisor decorativo">
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2 -->
+    <section class="seccion fade-section" id="seccion2">
+      <div class="eventos">
+        <div class="evento">
+          <img src="img/recepcion.svg" alt="Recepción" width="32">
+          <span>Recepción 4:00pm</span>
+        </div>
+        <div class="evento">
+          <img src="img/ceremonia.svg" alt="Ceremonia" width="32">
+          <span>Ceremonia 5:00pm</span>
+        </div>
+        <div class="evento">
+          <img src="img/cena.svg" alt="Comida" width="32">
+          <span>Comida 6:00pm</span>
+        </div>
+        <div class="evento">
+          <img src="img/brindis.svg" alt="Brindis" width="32">
+          <span>Brindis 7:00pm</span>
+        </div>
+        <div class="evento">
+          <img src="img/fiesta.svg" alt="Festejo" width="32">
+          <span>Festejo 8:00pm</span>
+        </div>
+        <div class="evento centro">
+          <img src="img/ubicacion.png" alt="Ubicación" width="32">
+          <a class="ubicacion-link" href="https://maps.app.goo.gl/Tj15Hye38dWPGfQf7" target="_blank">
+            Rancho Avalos
+          </a>
+          <span>Ubicación</span>
+        </div>
+      </div>
+
+      <div class="divisor">
+        <img src="img/divisor.png" alt="Divisor decorativo">
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3 - CÓDIGO DE VESTIMENTA + NOTAS -->
+    <section class="seccion fade-section" id="seccion3">
+      <div class="eventos">
+
+        <!-- Bloque del código de vestimenta ajustado -->
+        <div class="evento vestimenta">
+          <span>Código de vestimenta: <strong>FORMAL</strong></span>
+          <img src="img/codigo.png" alt="Código de vestimenta" width="48">
+        </div>
+
+        <!-- Bloque del mensaje -->
+        <div class="evento">
+          <span>
+            Queremos que luzcas en la fiesta,<br />
+            evita usar colores como:
+          </span>
+        </div>
+
+        <!-- Lista de colores restringidos -->
+        <div class="evento centro colores-restringidos">
+          <div class="color-label">
+            <span>Beige</span>
+            <div class="color-circle" style="background-color: #f5f5dc;"></div>
+          </div>
+          <div class="color-label">
+            <span>Blanco</span>
+            <div class="color-circle" style="background-color: #ffffff; border: 1px solid #ccc;"></div>
+          </div>
+          <div class="color-label">
+            <span>Verde olivo</span>
+            <div class="color-circle" style="background-color: #808000;"></div>
+          </div>
+          <div class="color-label">
+            <span>Verde pastel</span>
+            <div class="color-circle" style="background-color: #77dd77;"></div>
+          </div>
+        </div>
+
+        <!-- SUBTÍTULO: IMPORTANTE -->
+        <div class="evento evento-subtitulo">
+          <strong>IMPORTANTE</strong>
+        </div>
+
+        <!-- BEBIDAS -->
+        <div class="evento">
+          <span><strong>Llevar lo que gusten tomar<br /><small>(bebidas alcohólicas)</small></strong></span>
+          <img src="img/bebidas.png" alt="Bebidas" width="36">
+        </div>
+
+        <!-- NIÑOS -->
+        <div class="evento">
+          <span><strong><u>NO NIÑOS</u></strong></span>
+          <img src="img/ninos.png" alt="No niños" width="36">
+        </div>
+
+      </div>
+
+      <div class="divisor">
+        <img src="img/divisor.png" alt="Divisor decorativo">
+      </div>
+    </section>
+
+    <section class="seccion fade-section" id="seccion4">
+      <div class="contenido-regalo">
+        <p class="mensaje-grande">Su presencia es nuestro<br>gran regalo...</p>
+        <img src="img/sobre.png" alt="Sobre para obsequio" class="icono-sobre" />
+        <p class="mensaje-secundario">
+          Pero si gustan darnos un obsequio<br>
+          estaremos muy agradecidos.
+        </p>
+      </div>
+      <div class="divisor">
+        <img src="img/divisor.png" alt="Divisor decorativo">
+      </div>
+    </section>
+    <!-- SECCIÓN 4 – CONFIRMACIÓN DE ASISTENCIA -->
+    <section id="formulario" class="seccion fade-section">
+      <form id="form-asistencia">
+        <label for="nombre"><strong>Nombre:</strong></label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label><strong>¿Asistirás?</strong></label>
+        <div class="radio-group">
+          <label><input type="radio" name="asistencia" value="Sí" required /> Sí</label>
+          <label><input type="radio" name="asistencia" value="No" required /> No</label>
+        </div>
+
+        <button type="submit" onclick="event.preventDefault(); mostrarConfirmacion();">
+          Responder invitación
+        </button>
+      </form>
+
+      <div id="confirmacion-whatsapp" style="display:none;">
+        <p>Ya tenemos tus respuestas, pero por favor confírmanos por WhatsApp a alguno de los dos:</p>
+        <button onclick="confirmarWhatsapp('claudia')">Confirmar por WhatsApp a Claudia</button>
+        <button onclick="confirmarWhatsapp('erik')">Confirmar por WhatsApp a Erik</button>
+      </div>
+
+      <div class="divisor">
+        <img src="img/divisor.png" alt="Divisor decorativo">
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- Modal de Gracias -->
+<div id="modal-gracias" style="
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+">
+  <div style="
+    background: white;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    color: #234634;
+    font-size: 1.8rem;
+    font-family: 'Cabin', sans-serif;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  ">
+    ¡Gracias por confirmar tu asistencia!
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+
+</html>
