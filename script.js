@@ -143,26 +143,27 @@ function confirmarWhatsapp(destino) {
   }, 500);
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  const audio = document.getElementById('musica-fondo');
-  audio.volume = 0; // Inicia en silencio
+document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('bg-music');
+  let started = false;
 
-  const fadeInDuration = 20000; // 10 segundos
-  const fadeSteps = 100;
-  const stepTime = fadeInDuration / fadeSteps;
-  let currentStep = 0;
-
-  const fadeInInterval = setInterval(() => {
-    currentStep++;
-    audio.volume = Math.min(currentStep / fadeSteps, 1);
-
-    if (currentStep >= fadeSteps) {
-      clearInterval(fadeInInterval);
+  const startMusic = () => {
+    if (!started) {
+      audio.volume = 0;
+      audio.play().then(() => {
+        const fadeIn = setInterval(() => {
+          if (audio.volume < 1) {
+            audio.volume = Math.min(audio.volume + 0.1, 1);
+          } else {
+            clearInterval(fadeIn);
+          }
+        }, 1000);
+        started = true;
+      }).catch(() => {
+        console.log('Autoplay bloqueado');
+      });
     }
-  }, stepTime);
+  };
 
-  // Intenta reproducir si el navegador lo bloqueó
-  audio.play().catch(() => {
-    console.warn("Autoplay bloqueado, se requiere interacción del usuario.");
-  });
+  document.body.addEventListener('click', startMusic, { once: true });
 });
