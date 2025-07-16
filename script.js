@@ -145,25 +145,28 @@ function confirmarWhatsapp(destino) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const audio = document.getElementById('bg-music');
-  let started = false;
+  let iniciado = false;
 
-  const startMusic = () => {
-    if (!started) {
-      audio.volume = 0;
-      audio.play().then(() => {
-        const fadeIn = setInterval(() => {
-          if (audio.volume < 1) {
-            audio.volume = Math.min(audio.volume + 0.1, 1);
-          } else {
-            clearInterval(fadeIn);
-          }
-        }, 1000);
-        started = true;
-      }).catch(() => {
-        console.log('Autoplay bloqueado');
-      });
-    }
+  const iniciarMusica = () => {
+    if (iniciado) return;
+
+    audio.volume = 0;
+    audio.play().then(() => {
+      // Fade-in de 10 segundos
+      const intervalo = setInterval(() => {
+        if (audio.volume < 1) {
+          audio.volume = Math.min(audio.volume + 0.1, 1);
+        } else {
+          clearInterval(intervalo);
+        }
+      }, 1000);
+      iniciado = true;
+    }).catch(err => {
+      console.warn("Autoplay bloqueado:", err);
+    });
   };
 
-  document.body.addEventListener('click', startMusic, { once: true });
+  // Reproducir tras primer clic
+  document.body.addEventListener('click', iniciarMusica, { once: true });
 });
+
