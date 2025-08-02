@@ -128,7 +128,7 @@ function confirmarWhatsapp(destino) {
   const mensajeNo = "Gracias por la invitación. No podré asistir, pero les deseo la mejor de las celebraciones. ¡Felicidades!";
   const mensaje = asistenciaInput.value === "No" ? mensajeNo : mensajeSi;
 
-  const numero = destino === 'claudia' ? '5216461517207' : '5216461515789';
+  const numero = destino === 'alma' ? '5216463077208' : '5216463077208';
   const mensajeFinal = `Hola, soy ${nombre}. ${mensaje}`;
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensajeFinal)}`;
 
@@ -169,4 +169,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // Reproducir tras primer clic
   document.body.addEventListener('click', iniciarMusica, { once: true });
 });
+
 
